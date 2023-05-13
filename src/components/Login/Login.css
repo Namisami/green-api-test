@@ -1,22 +1,18 @@
 .login {
   display: flex;
   flex-direction: column;
-  width: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #222e35;
-  padding: 50px;
-  border-radius: 8px;
   gap: 10px;
 }
 .login__label {
-  color: white;
+  color: rgba(233,237,239,0.88);
   font-size: 1.2em;
 }
 .login__input {
-  background: white;
+  background: #202c33;
   height: 2em;
   border-radius: 3px;
   width: 100%;

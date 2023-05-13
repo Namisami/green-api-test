@@ -1,7 +1,14 @@
+import { useState } from 'react'
 import Login from './components/Login/Login'
+import { userDataI } from './types/UserDataI'
 import './App.css'
 
 function App() {
+  const [userData, setUserData] = useState<userDataI>({
+    id: '',
+    token: ''
+  })
+
   return (
     <>
       <div className='container'>
@@ -9,7 +16,7 @@ function App() {
 
         </div>
         <div className="content">
-          <Login />
+          <Login onLogin={ (data: userDataI) => setUserData({...userData, ...data}) } />
         </div>
       </div>
     </>

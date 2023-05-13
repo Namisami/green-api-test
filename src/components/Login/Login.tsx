@@ -1,18 +1,30 @@
 import { useState } from 'react'
 import Button from '../Button/Button'
 import { ButtonColors } from '../../types/ButtonColors'
+import { userDataI } from '../../types/UserDataI'
 import axios from 'axios'
 import './Login.css'
 
-const Login = () => {
+interface LoginProps {
+  onLogin: (data: userDataI) => void
+}
+
+const Login = ({
+  onLogin
+}: LoginProps) => {
   const [id, setId] = useState('')
   const [token, setToken] = useState('')
 
-  const login = () => {
+  const handleLogin = () => {
     axios.get(`https://api.green-api.com/waInstance${id}/getStateInstance/${token}`)
-      .then((res) => console.log(res))
+      .then((res) => {
+        if (res.data.stateInstance === 'authorized') {
+          onLogin({id, token})
+        }
+      })
       .catch((err) => console.log(err))
   }
+
   return (
     <div className="login">
       <div className="login__field">
@@ -25,7 +37,7 @@ const Login = () => {
       </div>
       <Button  
         color={ ButtonColors.primaryOutline }
-        onButtonClick={ login }
+        onButtonClick={ handleLogin }
       >
         Войти
       </Button>

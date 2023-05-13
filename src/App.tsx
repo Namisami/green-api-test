@@ -12,12 +12,17 @@ function App() {
   return (
     <>
       <div className='container'>
-        <div className="sidebar">
+        {userData.id ?
+          <>
+            <div className="sidebar">
 
-        </div>
-        <div className="content">
+            </div>
+            <div className="content">
+            
+            </div>
+          </> : 
           <Login onLogin={ (data: userDataI) => setUserData({...userData, ...data}) } />
-        </div>
+        }
       </div>
     </>
   )

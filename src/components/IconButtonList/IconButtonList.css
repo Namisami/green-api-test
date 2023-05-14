@@ -1,0 +1,7 @@
+.icon-btn-list {
+  display: flex;
+  align-items: center;
+}
+.icon-btn-list__item:not(:first-child) {
+  margin-left: 10px
+}

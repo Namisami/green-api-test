@@ -1,12 +1,16 @@
 .button {
+  position: relative;
   cursor: pointer;
   font-size: 1.2em;
   width: fit-content;
   margin: 3px auto;
+  transition: background 0.3s;
+}
+.button--primary:hover {
+  background: #202c33;
 }
 .button--primary-outline {
   outline: 1px solid rgba(233,237,239,0.88);
-  transition: background 0.3s;
 }
 .button--primary-outline:hover {
   background: #202c33;
@@ -14,4 +18,16 @@
 .button--rectangle {
   padding: 5px 7px;
   border-radius: 3px;
+}
+.button--circle {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+}
+.button--circle > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

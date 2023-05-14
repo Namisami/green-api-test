@@ -5,14 +5,14 @@ import './Button.css'
 
 interface ButtonProps {
   children: ReactNode
-  color: ButtonColors
+  color?: ButtonColors
   form?: ButtonForms
   onButtonClick: () => void
 }
 
 const Button = ({
   children,
-  color,
+  color = ButtonColors.primaryOutline,
   form = ButtonForms.rectangle,
   onButtonClick
 }: ButtonProps) => {

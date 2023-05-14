@@ -7,7 +7,6 @@
   border-radius: 3px;
 }
 .button--primary-outline {
-  color: rgba(233,237,239,0.88);
   outline: 1px solid rgba(233,237,239,0.88);
   transition: background 0.3s;
 }

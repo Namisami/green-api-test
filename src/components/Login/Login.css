@@ -8,13 +8,11 @@
   gap: 10px;
 }
 .login__label {
-  color: rgba(233,237,239,0.88);
   font-size: 1.2em;
   line-height: 1.4em;
 }
 .login__input {
   background: #202c33;
-  color: rgba(233,237,239,0.88);
   height: 2em;
   padding: 5px 7px;
   border-radius: 3px;

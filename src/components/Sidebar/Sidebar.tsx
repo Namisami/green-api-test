@@ -5,6 +5,7 @@ import { ReactComponent as ChatImg } from '../../assets/chat.svg'
 import { ReactComponent as MenuImg } from '../../assets/menu.svg'
 
 import IconButtonList from '../IconButtonList/IconButtonList'
+import ContactList from '../ContactList/ContactList'
 import './Sidebar.css'
 
 const Sidebar = () => {
@@ -14,6 +15,7 @@ const Sidebar = () => {
         <DefaultUserImg className='header__user'/>
         <IconButtonList icons={ [GroupImg, StatusImg, ChatImg, MenuImg] }/>
       </div>
+      <ContactList />
     </>
   )
 }

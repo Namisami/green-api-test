@@ -1,0 +1,12 @@
+.contacts {
+  flex: 1;
+}
+.contacts__item {
+  display: flex;
+  height: 72px;
+  padding: 0 15px;
+}
+.contacts__item:hover {
+  cursor: pointer;
+  background: #202C33;
+}

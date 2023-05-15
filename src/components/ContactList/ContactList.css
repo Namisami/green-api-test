@@ -4,7 +4,7 @@
 .contacts__item {
   display: flex;
   height: 72px;
-  padding: 0 15px;
+  padding-left: 15px;
 }
 .contacts__item:hover {
   cursor: pointer;

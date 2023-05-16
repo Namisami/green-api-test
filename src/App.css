@@ -12,6 +12,7 @@
 }
 .content {
   flex: 2;
+  border-left: 1px solid rgba(233,237,239,0.12);
   height: 100%;
   background: #222e35;
   position: relative;

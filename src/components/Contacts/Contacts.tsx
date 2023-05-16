@@ -3,7 +3,13 @@ import Search from '../Search/Search'
 import ContactList from '../ContactList/ContactList'
 import './Contacts.css'
 
-const Contacts = () => {
+interface ContactsProps {
+  onContactSelect: (contact: string) => void
+}
+
+const Contacts = ({
+  onContactSelect
+}: ContactsProps) => {
   const [contacts, setContacts] = useState<string[]>([])
 
   const newChat = (e: React.FormEvent, searchTerm: string) => {
@@ -16,6 +22,7 @@ const Contacts = () => {
       <Search onSearch={ (e, searchTerm) => newChat(e, searchTerm) }/>
       <ContactList 
         contacts={ contacts }
+        onContactItemSelect={ (contact) => onContactSelect(contact) }
       />
     </>
   )

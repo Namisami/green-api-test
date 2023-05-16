@@ -34,3 +34,7 @@
 .input__field::placeholder {
   color: #8696A0
 }
+.input__field::-webkit-outer-spin-button,
+.input__field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

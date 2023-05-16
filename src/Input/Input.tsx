@@ -3,6 +3,7 @@ import './Input.css'
 interface InputProps {
   children: React.ReactNode
   value: string
+  type?: string
   icon?: React.FC
   onInputChange: (value: string) => void;
 }
@@ -10,6 +11,7 @@ interface InputProps {
 const Input = ({
   children,
   value,
+  type='text',
   icon,
   onInputChange,
 }: InputProps) => {
@@ -33,7 +35,7 @@ const Input = ({
         id={ placeholder } 
         value={ value } 
         onChange={ (e) => onInputChange(e.target.value) } 
-        type="text" 
+        type={ type } 
         placeholder={ placeholder }
       />
     </div>

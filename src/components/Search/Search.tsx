@@ -19,6 +19,7 @@ const Search = ({
     >
       <Input
         value={ searchTerm }
+        type='number'
         icon={ SearchImg }
         onInputChange={ setSearchTerm }
       >

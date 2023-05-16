@@ -2,7 +2,13 @@ import { useState, useEffect } from 'react'
 import Login from './components/Login/Login'
 import { userDataI } from './types/UserDataI'
 import Welcome from './pages/Welcome/Welcome'
-import Sidebar from './components/Sidebar/Sidebar'
+import IconButtonList from './components/IconButtonList/IconButtonList'
+import Contacts from './components/Contacts/Contacts'
+import { ReactComponent as DefaultUserImg } from './assets/default-user.svg'
+import { ReactComponent as GroupImg } from './assets/group.svg'
+import { ReactComponent as StatusImg } from './assets/status.svg'
+import { ReactComponent as ChatImg } from './assets/chat.svg'
+import { ReactComponent as MenuImg } from './assets/menu.svg'
 import axios from 'axios'
 import './App.css'
 
@@ -11,6 +17,7 @@ function App() {
     id: '',
     token: ''
   })
+  const [activeChat, setActiveChat] = useState('')
 
   useEffect(() => {
     if (userData.id !== '') {
@@ -25,10 +32,19 @@ function App() {
         {/* {userData.id ? */}
           <>
             <div className="sidebar">
-              <Sidebar />
+              <div className="sidebar__header header">
+                <DefaultUserImg className='header__user'/>
+                <IconButtonList icons={ [GroupImg, StatusImg, ChatImg, MenuImg] }/>
+              </div>
+              <Contacts
+                onContactSelect={ (contact) => setActiveChat(contact) }
+              />
             </div>
             <div className="content">
-              <Welcome />
+              { activeChat 
+                ? <div></div>
+                : <Welcome />
+              }
             </div>
           </>
           {/* : <Login onLogin={ (data: userDataI) => setUserData({...userData, ...data}) } />

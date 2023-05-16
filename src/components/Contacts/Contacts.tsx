@@ -8,13 +8,15 @@ const Contacts = () => {
 
   const newChat = (e: React.FormEvent, searchTerm: string) => {
     e.preventDefault()
-    contacts.push(searchTerm)
+    setContacts([...contacts, searchTerm])
   }
 
   return (
     <>
       <Search onSearch={ (e, searchTerm) => newChat(e, searchTerm) }/>
-      <ContactList />
+      <ContactList 
+        contacts={ contacts }
+      />
     </>
   )
 }

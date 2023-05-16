@@ -2,7 +2,7 @@ import ContactItem from '../ContactItem/ContactItem'
 import './ContactList.css'
 
 interface ContactListProps {
-  contacts?: []
+  contacts?: string[]
 }
 
 const ContactList = ({
@@ -10,9 +10,15 @@ const ContactList = ({
 }: ContactListProps) => {
   return (
     <ul className='contacts'>
-      <li key={1} className='contacts__item'>
-        <ContactItem />
-      </li>
+      { contacts?.map(contact => {
+        return (
+          <li key={ contact } className='contacts__item'>
+            <ContactItem 
+              contact={ contact }
+            />
+          </li>
+        )
+      })}
     </ul>
   )
 }

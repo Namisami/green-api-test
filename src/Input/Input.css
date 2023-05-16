@@ -1,5 +1,16 @@
 .input {
-  
+  display: flex;
+  flex: 1;
+  height: 35px;
+  position: relative;
+}
+.input__icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
 }
 .input__label {
   visibility: hidden;
@@ -8,10 +19,13 @@
 }
 .input__field {
   background: #202c33;
-  height: 2em;
-  padding: 5px 7px;
+  height: auto;
+  padding: auto;
   border-radius: 3px;
   width: 100%;
+}
+.input__field--icon {
+  padding: 0 32px 0 65px;
 }
 .input__field:-webkit-autofill,
 .input__field:-webkit-autofill:focus {

@@ -1,0 +1,6 @@
+.search {
+  height: 49px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+}

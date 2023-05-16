@@ -1,0 +1,22 @@
+.input {
+  
+}
+.input__label {
+  visibility: hidden;
+  position: absolute;
+  height: 0;
+}
+.input__field {
+  background: #202c33;
+  height: 2em;
+  padding: 5px 7px;
+  border-radius: 3px;
+  width: 100%;
+}
+.input__field:-webkit-autofill,
+.input__field:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+.input__field::placeholder {
+  color: #8696A0
+}

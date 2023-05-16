@@ -16,14 +16,13 @@ function App() {
     if (userData.id !== '') {
       axios.get(`https://api.green-api.com/waInstance${userData.id}/ReceiveNotification/${userData.token}`)
         .then((res) => console.log(res))
-        
     }
   }, [userData])
 
   return (
     <>
       <div className='container'>
-        {userData.id ?
+        {/* {userData.id ? */}
           <>
             <div className="sidebar">
               <Sidebar />
@@ -32,8 +31,8 @@ function App() {
               <Welcome />
             </div>
           </>
-          : <Login onLogin={ (data: userDataI) => setUserData({...userData, ...data}) } />
-        }
+          {/* : <Login onLogin={ (data: userDataI) => setUserData({...userData, ...data}) } />
+        } */}
       </div>
     </>
   )

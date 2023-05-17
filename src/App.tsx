@@ -23,8 +23,10 @@ function App() {
 
   useEffect(() => {
     if (userData.id !== '') {
-      axios.get(`https://api.green-api.com/waInstance${userData.id}/ReceiveNotification/${userData.token}`)
-        .then((res) => console.log(res))
+      setInterval(() => {
+        axios.get(`https://api.green-api.com/waInstance${userData.id}/ReceiveNotification/${userData.token}`)
+          .then((res) => console.log(res))
+      }, 2000)
     }
   }, [userData])
 
